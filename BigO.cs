@@ -1,17 +1,26 @@
 
 public class BigO
 {
-  private int[] myArray = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30 };  // declaração e inicialização de um array
+  private int[] myArray;
   private int[] reverseArray;
 
   public BigO()
   {
+    var arrayLength = 30;
+
+    myArray = new int[arrayLength];
+    for (int i = 0; i < arrayLength; i++)
+    {
+      myArray[i] = i;
+    }
     reverseArray = myArray.Reverse().ToArray();
   }
 
   private void Print(object text)
   {
-    //Console.WriteLine(text);
+#if DEBUG    
+    Console.WriteLine(text);
+#endif    
   }
 
   public void O1()
